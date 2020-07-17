@@ -1,116 +1,91 @@
+function menuToggle() {
 
-function alterar(titulo){
-   
-   
-    document.getElementById("campo").value = titulo
-     
-}
+let menuArea = document.getElementById("menu-area");
+if( menuArea.classList.contains("menu-opened") == true){
+    menuArea.classList.remove("menu-opened");
+} else { menuArea.classList.add("menu-opened")}
+};
 
-alterar("");
+let dia = 5;
+let diaName = '';
 
-
-function somar(x, y){
-
-let total = x + y;
-
-return total;
-}
-
-var resultado = somar(15, 25);
-
-console.log(resultado);
-
-
-function clicou(){
-
-document.getElementById("title").innerHTML = "PROCESSANDO...";
-alert("VOCÊ CLICOU!!");
-}
-
-
-function digitou(e){
-
- if (e.keyCode == 13 && e.ctrlKey== true ){
-
-    let texto = document.getElementById("campo").value;
-
-    console.log(texto);
-
+switch (dia){  
+     case 1:
+        diaName = "Segunda-Feira";
+     break;
+case 2:
+        diaName = 'Terça-Feira';
+     break;
+case 3:
+         diaName = 'Quarta-Feira'
+     break;
+case 4:
+    diaName = "Quinta-Feira";
+    break;
+case 5:
+    diaName = "Sexta-Feira";
+    break;
+case 6: 
+    diaName = "Sabado";
+    break ;
+    
+case 7: 
+    diaName = "Domingo";
+    break ; 
  }
 
+ document.getElementById("dia").innerHTML = "Hoje é:" +diaName;  
+ 
+ let day = 4;
+ let dayName = ""
+ 
+ switch (day) {
+    case 7: 
+    case 6: 
+        dayName = 'Final de Semana';
+         
+    break
 
-}
+     default:
 
+        dayName = 'DIA DE SEMANA';
+         break;
+ }
 
-        function azul(){
+ document.getElementById("day").innerHTML = "Hoje é:"+dayName;
 
-        limpar();
-        document.getElementById("paragrafo").classList.add('azul')
-            
-            }
-    
-        function red(){
-
-        limpar()
-        document.getElementById("paragrafo").classList.add('red')
-        
-        
-        }
-        
-        function verde(){
-
-        limpar()
-        document.getElementById("paragrafo").classList.add('verde')
-            
-            
-            }
-            
-         function limpar(){
-
-         document.getElementById("paragrafo").classList.remove("azul");
-         document.getElementById("paragrafo").classList.remove("red");
-         document.getElementById("paragrafo").classList.remove("verde");
-
-            }
-                    
-        function mostrarTelefone(elemento){
-
-            elemento.style.display = "none";
-            document.getElementById("telefone").style.display = "block";
-
-
-        }
-
-
-        let carros = [
-
-            [ "maçã", "banana", "mamão"],
-            [ 'pizza', 'fastfood', 'batata frita']
-
-        ]
+  //FOR LOOP
+  // FOR LOOP ARRAY
    
-        console.log(carros)
-        
-        //objetos
-       let carro = {
+ let texto = ""
+ 
+ /* for tem três etapas:
 
-        nome:"Honda",
-        marca: 'HB20',
-        peso: '856kg',
-        ligado: false,
-        ligar:function(){
-            this.ligado == true;
-            console.log("vruumm vruuummm!");
-        },
-        acelerar:function(){
+ 1º) a criação da variavel
+ 2º) a condição
+ 3º) a incrementação */
 
-            if(this.ligado == true)  {  
-            console.log('RRRIIIIIIHIHIH')
-        } else{
+  for(let i = 0; i <= 50; i++){
+ 
+    texto = texto + i + "<br/>";
+ 
 
-            console.log(tihs.nome+ ""+ this.modelo+"não está ligado!");
-        }
-    }
+  };
+/*
+  let carros = [ 'HB20', '4X4', 'SIENA', 'UNO'];
+
+  let html = '<ul>';
+
+  for( let i in carros){
+
+    html+= '<li>'+ carros[i]+'<li/>';
+
   }
-     carro.ligar();
-     carro.acelerar();
+
+  html+= '<ul/>'
+
+  document.getElementById('demo').innerHTML = texto;
+*/
+
+
+

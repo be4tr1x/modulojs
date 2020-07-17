@@ -7,24 +7,25 @@
 </head>
 <body>
 
-    <h1 id="title" onmouseout="console.log('ieeee tu passa o mouse neh')" >Módulo Script</h1>
-    <p id=paragrafo>Como você, particulamente, faria para sair desse labirinto de sofrimento?</p>
-    <input onkeyup="digitou(event)" id="campo" type="text" name="usuario">
+    <h1>Script</h1>
+    <aside>
+        <div onclick="menuToggle()" id="menu-opener">
+            
+              <img src="menu.png" width="36">
+            
+        </div>
+        <div id="menu-area">
+            <ul>
+                <li>Home</li>
+                <li>Sobre</li>
+                <li>Contato</li>
+            </ul>
+        </div>
+    </aside>
+    <div id="dia"></div>
+    <div id="day"></div>
 
-
-   <button onclick="azul()">azul</button>
-   <button onclick="red()" >cigarros</button>
-   <button onclick="verde()">bebidas</button>
-
-
-
-    <button onclick="clicou ()">CLICK</button> <br>
-
-    <div id="telefone"> 123456789</div>
-    <button  onclick="mostrarTelefone(this)">Mostrar Telefone</button>
-
-    
-
-    <script src="script.js"></script>
+    <div id="demo"></div>
+        <script src="script.js"></script>
 </body>
 </html>
