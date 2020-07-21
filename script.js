@@ -1,91 +1,77 @@
-function menuToggle() {
+let nome = 'Beatriz Souza';
 
-let menuArea = document.getElementById("menu-area");
-if( menuArea.classList.contains("menu-opened") == true){
-    menuArea.classList.remove("menu-opened");
-} else { menuArea.classList.add("menu-opened")}
-};
+let resultado = "";
 
-let dia = 5;
-let diaName = '';
+if(nome.indexOf('Beatriz') > -1){  //método de string 1º
 
-switch (dia){  
-     case 1:
-        diaName = "Segunda-Feira";
-     break;
-case 2:
-        diaName = 'Terça-Feira';
-     break;
-case 3:
-         diaName = 'Quarta-Feira'
-     break;
-case 4:
-    diaName = "Quinta-Feira";
-    break;
-case 5:
-    diaName = "Sexta-Feira";
-    break;
-case 6: 
-    diaName = "Sabado";
-    break ;
-    
-case 7: 
-    diaName = "Domingo";
-    break ; 
- }
+  resultado = ('achou')
 
- document.getElementById("dia").innerHTML = "Hoje é:" +diaName;  
- 
- let day = 4;
- let dayName = ""
- 
- switch (day) {
-    case 7: 
-    case 6: 
-        dayName = 'Final de Semana';
-         
-    break
+} else{
 
-     default:
+resultado = ('fala se fodeu')
 
-        dayName = 'DIA DE SEMANA';
-         break;
- }
+}
 
- document.getElementById("day").innerHTML = "Hoje é:"+dayName;
+console.log(resultado);
 
-  //FOR LOOP
-  // FOR LOOP ARRAY
-   
- let texto = ""
- 
- /* for tem três etapas:
 
- 1º) a criação da variavel
- 2º) a condição
- 3º) a incrementação */
+let name = "Daenerys Targeryan";
 
-  for(let i = 0; i <= 50; i++){
- 
-    texto = texto + i + "<br/>";
- 
+let blood = name.substr(-10, 4);    //método de string 2º
 
-  };
+console.log(blood);
+
+//método de string 3º
+
+//primeira função mostrada na aula
+let frase = 'Como você, particulamente, faria para sair desse labirinto de sofrimento?';
+
+let alasca = frase.replace("Como você, particulamente, faria para sair desse labirinto de sofrimento?", "o que me dá esperança?");
+
+
+console.log("frase:", frase);
+console.log( "alasca:", alasca);
+
+//segunda função mostrada na aula
+let personagem = "MULHER MARAVILHA";
+
+let luta = personagem.toLowerCase();
+
+console.log(luta);
+
 /*
-  let carros = [ 'HB20', '4X4', 'SIENA', 'UNO'];
+//terceira função mostrada na aula
 
-  let html = '<ul>';
+let rainha = "Cersei";
 
-  for( let i in carros){
+let rugir = rainha.trim(); // função que impede espaços aleatorios: no input....
 
-    html+= '<li>'+ carros[i]+'<li/>';
+let rugir = rainha.concat(" Lannister"); // função que junta afnsjoafkl
 
-  }
-
-  html+= '<ul/>'
-
-  document.getElementById('demo').innerHTML = texto;
+let rugir = rainha.charAt(3); //seleciona o caracteris da string 
+console.log(rugir);
 */
 
+
+
+//método de numbers
+/*
+let n = 10;
+let res = n.toString()  + 20; //faz o número ficar em literal
+
+console.log(res);
+*/
+
+/*
+let n = 10.456789
+
+let res = n.toFixed(2); //escolha de números decimais 
+
+console.log(res);*/
+
+let n = "130";
+let res  = parseInt(n) + 15;  //caso o numero estiver em string e com decimais, usar o código *parseFloat(x)*
+
+console.log(res);
 
 
