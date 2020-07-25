@@ -1,77 +1,173 @@
-let nome = 'Beatriz Souza';
+//métodos de manipulação de Array
 
-let resultado = "";
+let listas = ['meias', 'camisas', 'sapatos', 'shorts'];
 
-if(nome.indexOf('Beatriz') > -1){  //método de string 1º
+let res = listas.join("*"); // transforma numa string com uma separação por algum caractere
+ 
+console.log(res);
 
-  resultado = ('achou')
 
-} else{
+/*
+let school = [ 'caderno', 'lápis', 'borracha', 'caneta'];
 
-resultado = ('fala se fodeu')
+let list = school.indexqOf('caneta'); //achar algum elemento na list
 
-}
+console.log(list);
+*/
+
+
+let number = ['1', '2','3','4'];
+
+number[0] = '0'
+
+number.pop()// remove a última coisa da lista 
+ 
+/*number.shift() -> remove a primeira coisa da lista*/
+
+number.push('5'); //adiciona mais um item no meu array;
+
+let resp = number;
+
+console.log(resp);
+
+
+
+let receita  = ['ovos', 'trigo', 'manteiga', 'leite'];
+
+/*
+let receita2 = ['ovo', 'manteiga', 'frigideira']
+delete receita[1]; -> //uns dos tipo para deletar um array
+
+receita.splice(1, 2);   // função de remover um elemento da lista, a partir do elemento desejados
+*/
+
+
+/*let bolo = receita.concat(receita2);*/
+
+let bolo = receita.sort(); // lista alfabetica
+           receita.reverse();
+console.log(bolo);
+
+
+/*
+let num = [45, 25, 60, 47];
+
+let num2 = [];
+
+num2 = num.map(function(item){
+ 
+return item * 3 //map pode ser usado como uma "calculadora"
+
+})
+
+resultado = num2;
+
+console.log(resultado);
+*/
+
+let num = [45, 21, 89, 12];
+
+let num2 = [];
+
+num2 = num.filter(function(item){  //filtrar os itens do meu array
+
+    if(item > 30){
+
+    return true;
+
+    } else{
+
+      return false;
+
+    }
+
+}); 
+
+let resultado = num2;
 
 console.log(resultado);
 
 
-let name = "Daenerys Targeryan";
+let calc = [78, 9, 65 , 19]
 
-let blood = name.substr(-10, 4);    //método de string 2º
+let cacl2 = []
 
-console.log(blood);
+cacl2 = calc.some(function(resu){
+                                      // function every 
+  return (resu > 50)? true : false
 
-//método de string 3º
-
-//primeira função mostrada na aula
-let frase = 'Como você, particulamente, faria para sair desse labirinto de sofrimento?';
-
-let alasca = frase.replace("Como você, particulamente, faria para sair desse labirinto de sofrimento?", "o que me dá esperança?");
+})
 
 
-console.log("frase:", frase);
-console.log( "alasca:", alasca);
+calc_r = cacl2;
 
-//segunda função mostrada na aula
-let personagem = "MULHER MARAVILHA";
-
-let luta = personagem.toLowerCase();
-
-console.log(luta);
-
-/*
-//terceira função mostrada na aula
-
-let rainha = "Cersei";
-
-let rugir = rainha.trim(); // função que impede espaços aleatorios: no input....
-
-let rugir = rainha.concat(" Lannister"); // função que junta afnsjoafkl
-
-let rugir = rainha.charAt(3); //seleciona o caracteris da string 
-console.log(rugir);
-*/
+console.log(calc_r);
 
 
 
-//método de numbers
-/*
-let n = 10;
-let res = n.toString()  + 20; //faz o número ficar em literal
+let idade = [12, 16, 18, 20]
 
-console.log(res);
-*/
+let anos = []
 
-/*
-let n = 10.456789
+anos = idade.findIndex(function(dia){
 
-let res = n.toFixed(2); //escolha de números decimais 
+  return (dia == 18)? true:false
 
-console.log(res);*/
 
-let n = "130";
-let res  = parseInt(n) + 15;  //caso o numero estiver em string e com decimais, usar o código *parseFloat(x)*
 
-console.log(res);
+})
+
+die = anos;
+
+console.log(die);
+
+
+
+
+
+let pessoa = [
+
+        {id: 1, nome: "Beatriz", sobrenome: "Souza"},
+        {id: 2, nome: "Paulo", sobrenome: "Tobias"},
+        {id: 3, nome: "Alinne", sobrenome: "Rodrigues"},
+
+]
+
+
+let procurar = pessoa.find(function(item){
+
+  return (pessoa.id == 2)? true : false
+
+
+})
+
+let achar = pessoa;
+
+console.log(achar)
+
+
+
+
+
+
+//DATAS:
+
+let d = new Date(); // ve o horario atual da data
+
+d.setDate( d.getDate() + 5); //manipulações de datas
+
+let novoValor = d;        
+
+console.log(novoValor);
+
+/*console.log(d.toDateString()); // algo mais resumido da data
+
+console.log(d.toString()); // algo mais justificado da data*/
+
+ /* se eu quiser pegar o mês usamos o: getMonth()
+   usar o GET 
+   se eu quiser pegar o dia usamos o: getDay();             
+   obs: o resultado do dia é equivalente o dia da semana 
+   o mês no js começar a contar do 0. ou seja, 0 a 11 meses*/
 
 
