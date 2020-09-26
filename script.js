@@ -1,173 +1,121 @@
-//métodos de manipulação de Array
-
-let listas = ['meias', 'camisas', 'sapatos', 'shorts'];
-
-let res = listas.join("*"); // transforma numa string com uma separação por algum caractere
- 
-console.log(res);
-
-
 /*
-let school = [ 'caderno', 'lápis', 'borracha', 'caneta'];
-
-let list = school.indexqOf('caneta'); //achar algum elemento na list
-
-console.log(list);
-*/
+let number = Math.floor(Math.random() * 100);
+console.log(number);
 
 
-let number = ['1', '2','3','4'];
 
-number[0] = '0'
+let timer;
 
-number.pop()// remove a última coisa da lista 
+function comecar(){
+
+ timer = setInterval(showTime, 1000);
+
+}
+
+function parar(){
+
+ clearInterval(timer);
+
+}
+
+function showTime(){
+
+    let d = new Date();
+    let h = d.getHours();
+    let m = d.getMinutes();
+    let s = d.getSeconds();
+    let txt = h+':'+ m+':'+ s;
+
+  document.querySelector('.demo').innerHTML = txt;
+
+}
+
+function sorteio(){
+
+    let number = Math.floor(Math.random() * 50,80, 90, 12,);
+    document.querySelector(".number").innerHTML = number
+
+
+}
+  
+//Template String
+
+let nome = "Beatriz";
  
-/*number.shift() -> remove a primeira coisa da lista*/
+let idade = 16;
 
-number.push('5'); //adiciona mais um item no meu array;
-
-let resp = number;
-
-console.log(resp);
-
-
-
-let receita  = ['ovos', 'trigo', 'manteiga', 'leite'];
-
-/*
-let receita2 = ['ovo', 'manteiga', 'frigideira']
-delete receita[1]; -> //uns dos tipo para deletar um array
-
-receita.splice(1, 2);   // função de remover um elemento da lista, a partir do elemento desejados
+//let frase = "Meu nome é "+nome+", e ano que vem eu terei "+(idade +1)+ "anos"
+let frase = `Meu nome é ${nome}, eu tenho ${idade} anos e ano que vem eu terei ${idade + 1} anos` ;
+console.log(frase)
 */
+//Desconstrução de Objetos
+let pessoa = {
 
+    filme: 'Carol',
+    atriz: 'Sarah Paulson',
+    idade: 'não definido',
+    social:{
+        facebook: "Sarah",
+        instagram: '@sarah',
+        twitter:{
+            url: "n3bul0s4",
+            seguidores: 6000
+        }
 
-/*let bolo = receita.concat(receita2);*/
+    },
 
-let bolo = receita.sort(); // lista alfabetica
-           receita.reverse();
-console.log(bolo);
+    fichaTecnica:function() {
 
-
-/*
-let num = [45, 25, 60, 47];
-
-let num2 = [];
-
-num2 = num.map(function(item){
- 
-return item * 3 //map pode ser usado como uma "calculadora"
-
-})
-
-resultado = num2;
-
-console.log(resultado);
-*/
-
-let num = [45, 21, 89, 12];
-
-let num2 = [];
-
-num2 = num.filter(function(item){  //filtrar os itens do meu array
-
-    if(item > 30){
-
-    return true;
-
-    } else{
-
-      return false;
+        return `${this.atriz} participou do filme ${this.filme}`;
 
     }
 
-}); 
+};
 
-let resultado = num2;
+//let {filme, atriz, idade, social:{twitter:{url:twitter, seguidores}}} = pessoa;
 
-console.log(resultado);
+//console.log(filme, atriz, idade, twitter, seguidores); 
+ 
 
+let pessoas = {
 
-let calc = [78, 9, 65 , 19]
+ nome: 'Jessica',
+ sobrenome: 'Lange',
+ idade: 64,
+ filmes: `etc, etc, etc`
 
-let cacl2 = []
+}
 
-cacl2 = calc.some(function(resu){
-                                      // function every 
-  return (resu > 50)? true : false
+function pegarNomeCompleto(obj){
 
-})
+    return `${obj.nome} ${obj.sobrenome} `
 
+};
 
-calc_r = cacl2;
-
-console.log(calc_r);
-
-
-
-let idade = [12, 16, 18, 20]
-
-let anos = []
-
-anos = idade.findIndex(function(dia){
-
-  return (dia == 18)? true:false
+console.log(pegarNomeCompleto(pessoas));
 
 
+//Descontruindo Arrays
 
-})
+let info = ['Beatriz Souza', 'Beatriz', 'Souza', '@be4tr1x'];
 
-die = anos;
+//let [nomeCompleto, nome, sobrenome, github] = info; //pegar todos os Arrays
 
-console.log(die);
+let [nomeCompleto, ,, github ] = info;
 
-
-
-
-
-let pessoa = [
-
-        {id: 1, nome: "Beatriz", sobrenome: "Souza"},
-        {id: 2, nome: "Paulo", sobrenome: "Tobias"},
-        {id: 3, nome: "Alinne", sobrenome: "Rodrigues"},
-
-]
+console.log(nomeCompleto, github);
 
 
-let procurar = pessoa.find(function(item){
+function criar (){
 
-  return (pessoa.id == 2)? true : false
-
-
-})
-
-let achar = pessoa;
-
-console.log(achar)
+    let a = [1,2,3];
+    return a
 
 
+}
 
+let numeros = criar();
 
+let [a,b,c] = numeros;
 
-
-//DATAS:
-
-let d = new Date(); // ve o horario atual da data
-
-d.setDate( d.getDate() + 5); //manipulações de datas
-
-let novoValor = d;        
-
-console.log(novoValor);
-
-/*console.log(d.toDateString()); // algo mais resumido da data
-
-console.log(d.toString()); // algo mais justificado da data*/
-
- /* se eu quiser pegar o mês usamos o: getMonth()
-   usar o GET 
-   se eu quiser pegar o dia usamos o: getDay();             
-   obs: o resultado do dia é equivalente o dia da semana 
-   o mês no js começar a contar do 0. ou seja, 0 a 11 meses*/
-
-
+console.log(a,b,c);
